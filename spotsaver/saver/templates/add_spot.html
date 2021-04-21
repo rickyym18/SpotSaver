@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Creating_Spot</title>
+</head>
+<body class="main">
+    <h1 class="add_header">Creat A New Listing </h1>
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        <form action="/creating" method="POST">
+            {% csrf_token %}
+            <label for=first_name class="input">First Name:</label>
+            <textarea name="first_name" class="text"></textarea>
+
+            <label for=last_name class="input">Last Name:</label>
+            <textarea name="last_name" class="text"></textarea>
+
+            <label for=location class="input">Location:</label>
+            <textarea name="location" class="text"></textarea>
+
+            <label for=spot_num class="input">Parking Spot Number:</label>
+            <textarea name="spot_num" class="text"></textarea>
+
+            <label for=description class="input">Description of Parking Spot</label>
+            <textarea name="description" class="text"></textarea>
+
+            <button type="submit" class="button">Submit</button>
+        </form>
+        <form action="/back" method="POST">
+            {% csrf_token %}
+        <button type="submit" class="button"><a href="/main">Back</a></button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="main">
+    <h1 class="header">Location {{ place.location }} profile</h1>  <a href="/main" class="oneback">Back to Main</a>
+        <div class="finalf">
+            <p>Midgar is the most technologically advanced city on the planet. Its large circular 
+                structure is supported above the ground by eight mako reactors and a central 
+                pillar, with various other supports around the city. On top of the structure 
+                lies the city proper, divided into eight sectors, while underneath it lie the 
+                slums for the city's unfortunate and downtrodden. Midgar was once eight 
+                individual towns, but their names have been forgotten in favor of referring 
+                to the different areas as sectors.</p>
+                <br>
+                <h2 class="mid">Map of Midgard</h2>
+                <div id="map">
+                    
+                </div>
+                <br>
+                <img src="{% static 'images/midgar.jpeg' %}">
+        </div>
+
+
+        <script>
+            console.log('screen')
+            function initMap() {
+                console.log('test')
+                var location = {lat: -22.051531, lng: 17.368000};
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 10,
+                    center: location
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLkLEAWOr8gmOclvOCQG3bK8t2DlDmJak&callback=initMap" ></script>
+</body>
+</html>

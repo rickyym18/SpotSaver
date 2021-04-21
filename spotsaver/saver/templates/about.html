@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="about">
+        <div class="bio">
+            <h1 class="title">Spotsaver</h1>
+            <p>Tired of losing time searching for parking at sport events, concerts, or just downtown? Hate
+            paying the expensive parking fees to park near the venue? All of those troubles go away with Spotsaver!
+            find parking wherever, whenever you need it from local residents who rent out their space just to you! Save time and have more
+            fun with Spotsaver. Parking is not all we do though! Need some extra storage? or a workspace that just isn't available to you where you are? Well
+            Spotsaver is here to find that perfect...Spot!
+            </p>
+        </div>
+    
+        <div class="photo">
+            <img src="{% static 'images/parking.jpg' %}">
+            <img src="{% static 'images/storage.jpg' %}">
+            <img src="{% static 'images/work.jpg' %}">
+            <br>
+            <div class="button">
+                <button><a href="/form">Click Here to Sign Up!</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
